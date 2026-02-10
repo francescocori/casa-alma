@@ -101,7 +101,7 @@ export default function Activities() {
       <div className="mx-auto grid max-w-7xl gap-6 md:grid-cols-3">
         {ACTIVITIES.map((activity, i) => (
           <RevealWrapper key={activity.name} delay={i * 150}>
-            <div className="group relative aspect-[16/10] cursor-pointer overflow-hidden rounded-md md:aspect-[3/4]">
+            <div className="group relative aspect-[16/10] cursor-pointer overflow-hidden -md md:aspect-[3/4] rounded-[20px]">
               <Image
                 src={activity.src}
                 alt={activity.alt}

@@ -4,7 +4,7 @@ import RevealWrapper from "@/components/RevealWrapper";
 
 export default function BookingCTA() {
   return (
-    <section className="relative bg-forest py-24 px-6 text-center text-warm-white">
+    <section className="relative bg-forest py-24 px-6 text-center text-warm-white rounded-[35px] mx-6">
       {/* Dot pattern overlay */}
       <div
         aria-hidden="true"

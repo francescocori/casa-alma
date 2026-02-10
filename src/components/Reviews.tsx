@@ -27,6 +27,24 @@ const REVIEWS: Review[] = [
     quote:
       "L'escursione alle cascate consigliata dai proprietari è stata incredibile. Ospitalità vera, come a villa di amici.",
   },
+  {
+    name: "Giulia P.",
+    date: "Ottobre 2025",
+    quote:
+      "L'escursione alle cascate consigliata dai proprietari è stata incredibile. Ospitalità vera, come a villa di amici.",
+  },
+  {
+    name: "Giulia P.",
+    date: "Ottobre 2025",
+    quote:
+      "L'escursione alle cascate consigliata dai proprietari è stata incredibile. Ospitalità vera, come a villa di amici.",
+  },
+  {
+    name: "Giulia P.",
+    date: "Ottobre 2025",
+    quote:
+      "L'escursione alle cascate consigliata dai proprietari è stata incredibile. Ospitalità vera, come a villa di amici.",
+  },
 ];
 
 function StarIcon() {
@@ -68,7 +86,7 @@ export default function Reviews() {
       <div className="mx-auto grid max-w-7xl gap-6 md:grid-cols-3">
         {REVIEWS.map((review, i) => (
           <RevealWrapper key={review.name} delay={i * 150}>
-            <div className="rounded-md bg-cream p-10 shadow-sm transition-transform duration-300 hover:-translate-y-1">
+            <div className="rounded-[20px] bg-cream p-10 shadow-sm transition-transform duration-300 hover:-translate-y-1 border-1 border-forest">
               {/* Stars */}
               <div className="mb-5 flex gap-1" aria-label="5 stelle su 5">
                 {Array.from({ length: 5 }, (_, j) => (

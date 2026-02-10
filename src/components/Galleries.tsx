@@ -69,17 +69,17 @@ function GalleryCard({ property }: { property: Property }) {
   const [active, setActive] = useState(0);
 
   return (
-    <div className="rounded-md bg-cream  transition-all duration-300  ">
+    <div className="rounded-[15px] bg-cream  transition-all duration-300  ">
       {/* Header */}
       <div className="flex items-center justify-between px-8 pt-6">
         <h3 className="font-heading text-xl text-forest">{property.name}</h3>
-        <span className="rounded-sm bg-terracotta/10 px-3 py-1 text-[0.65rem] uppercase tracking-widest text-terracotta">
+        <span className="rounded-[15px] bg-terracotta/10 px-3 py-1 text-[0.65rem] uppercase tracking-widest text-terracotta">
           {property.guests}
         </span>
       </div>
 
       {/* Main image */}
-      <div className="relative mx-6 mt-4 aspect-[16/10] overflow-hidden rounded-sm">
+      <div className="relative mx-6 mt-4 aspect-[16/10] overflow-hidden rounded-[20px]">
         {property.images.map((img, i) => (
           <Image
             key={img.src}
@@ -103,7 +103,7 @@ function GalleryCard({ property }: { property: Property }) {
             type="button"
             onClick={() => setActive(i)}
             aria-label={`Mostra foto ${i + 1}: ${img.alt}`}
-            className={`relative h-[55px] w-[70px] shrink-0 snap-start overflow-hidden rounded-sm transition-all duration-300 ${
+            className={`relative h-[55px] w-[70px] shrink-0 snap-start overflow-hidden rounded-[15px] transition-all duration-300 ${
               i === active
                 ? "border-2 border-terracotta opacity-100"
                 : "cursor-pointer opacity-60 hover:opacity-85"

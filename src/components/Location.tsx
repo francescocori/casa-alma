@@ -107,7 +107,7 @@ export default function Location() {
 
         {/* Right — Map placeholder */}
         <RevealWrapper delay={300} direction="left">
-          <div className="flex aspect-[4/3] flex-col items-center justify-center overflow-hidden rounded-md bg-cream-dark">
+          <div className="flex aspect-[4/3] flex-col items-center justify-center overflow-hidden rounded-[20px] bg-cream-dark">
             <svg
               width="48"
               height="48"
