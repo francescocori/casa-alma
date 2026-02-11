@@ -83,10 +83,10 @@ export default function Reviews() {
       </div>
 
       {/* Cards */}
-      <div className="mx-auto grid max-w-7xl gap-6 md:grid-cols-3">
+      <div className="mx-auto max-w-7xl flex gap-6 overflow-x-auto snap-x snap-mandatory pb-4 scrollbar-hide md:grid md:grid-cols-3 md:overflow-visible md:snap-none md:pb-0">
         {REVIEWS.map((review, i) => (
           <RevealWrapper key={i} delay={i * 150}>
-            <div className="rounded-[20px] bg-cream p-10 shadow-sm transition-transform duration-300 hover:-translate-y-1 border-1 border-forest">
+            <div className="w-[85vw] shrink-0 snap-center md:w-auto rounded-[20px] bg-cream p-10 shadow-sm transition-transform duration-300 hover:-translate-y-1 border-1 border-forest">
               {/* Stars */}
               <div className="mb-5 flex gap-1" aria-label="5 stelle su 5">
                 {Array.from({ length: 5 }, (_, j) => (
@@ -112,6 +112,17 @@ export default function Reviews() {
             </div>
           </RevealWrapper>
         ))}
+      </div>
+
+      {/* Scroll hint — mobile only */}
+      <div className="mt-4 flex items-center justify-center gap-2 text-carbon/40 md:hidden">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+          <polyline points="15 18 9 12 15 6" />
+        </svg>
+        <span className="text-[0.65rem] uppercase tracking-[3px]">Scorri</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+          <polyline points="9 6 15 12 9 18" />
+        </svg>
       </div>
     </section>
   );

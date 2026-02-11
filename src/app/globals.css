@@ -28,11 +28,13 @@ body {
   color: var(--color-carbon);
 }
 
-.gallery-thumbs {
+.gallery-thumbs,
+.scrollbar-hide {
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
-.gallery-thumbs::-webkit-scrollbar {
+.gallery-thumbs::-webkit-scrollbar,
+.scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
 
