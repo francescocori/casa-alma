@@ -23,21 +23,38 @@ export default function Navbar() {
 
   const closeMenu = useCallback(() => setMenuOpen(false), []);
 
-  // Lock body scroll when menu is open
+  // Lock body scroll when menu is open (position:fixed needed for iOS Safari)
   useEffect(() => {
-    document.body.style.overflow = menuOpen ? "hidden" : "";
-    return () => { document.body.style.overflow = ""; };
+    if (menuOpen) {
+      const scrollY = window.scrollY;
+      document.body.style.position = "fixed";
+      document.body.style.top = `-${scrollY}px`;
+      document.body.style.width = "100%";
+    } else {
+      const top = document.body.style.top;
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.width = "";
+      if (top) window.scrollTo(0, parseInt(top, 10) * -1);
+    }
+    return () => {
+      const top = document.body.style.top;
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.width = "";
+      if (top) window.scrollTo(0, parseInt(top, 10) * -1);
+    };
   }, [menuOpen]);
 
   return (
     <nav
       aria-label="Navigazione principale"
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
+      className={`fixed top-0 left-0 w-full z-50 transition-[background-color,backdrop-filter,box-shadow] ${
         menuOpen
-          ? "bg-transparent"
+          ? "bg-transparent duration-0"
           : scrolled
-            ? "bg-cream/95 backdrop-blur-md shadow-sm"
-            : "bg-transparent"
+            ? "bg-cream/95 backdrop-blur-md shadow-sm duration-300"
+            : "bg-transparent duration-300"
       }`}
     >
       <div className="relative z-[60] mx-auto flex max-w-7xl items-center justify-between px-6 py-4 md:px-10">
@@ -45,8 +62,8 @@ export default function Navbar() {
         <a
           href="#top"
           aria-label="Torna in cima — Villa Alma"
-          className={`font-heading text-lg tracking-[0.25em] transition-colors duration-500 ${
-            menuOpen ? "text-white" : scrolled ? "text-carbon" : "text-white"
+          className={`font-heading text-lg tracking-[0.25em] transition-colors duration-300 ${
+            menuOpen || !scrolled ? "text-white" : "text-carbon"
           }`}
         >
           VILLA ALMA
@@ -58,7 +75,7 @@ export default function Navbar() {
             <li key={href}>
               <a
                 href={href}
-                className={`group relative font-body text-xs uppercase tracking-widest transition-colors duration-500 ${
+                className={`group relative font-body text-xs uppercase tracking-widest transition-colors duration-300 ${
                   scrolled ? "text-carbon" : "text-white"
                 }`}
               >
@@ -78,34 +95,26 @@ export default function Navbar() {
           className="relative flex md:hidden flex-col justify-center items-center w-8 h-8 gap-[5px]"
         >
           <span
-            className={`block h-[2px] w-6 rounded-full transition-all duration-500 ${
-              menuOpen
-                ? "translate-y-[7px] rotate-45 bg-white"
-                : scrolled
-                  ? "bg-carbon"
-                  : "bg-white"
-            }`}
+            className={`block h-[2px] w-6 rounded-full transition-all duration-300 ${
+              menuOpen || !scrolled ? "bg-white" : "bg-carbon"
+            } ${menuOpen ? "translate-y-[7px] rotate-45" : ""}`}
           />
           <span
-            className={`block h-[2px] w-6 rounded-full transition-all duration-500 ${
-              menuOpen ? "opacity-0" : scrolled ? "bg-carbon" : "bg-white"
-            }`}
+            className={`block h-[2px] w-6 rounded-full transition-all duration-300 ${
+              menuOpen || !scrolled ? "bg-white" : "bg-carbon"
+            } ${menuOpen ? "opacity-0" : ""}`}
           />
           <span
-            className={`block h-[2px] w-6 rounded-full transition-all duration-500 ${
-              menuOpen
-                ? "-translate-y-[7px] -rotate-45 bg-white"
-                : scrolled
-                  ? "bg-carbon"
-                  : "bg-white"
-            }`}
+            className={`block h-[2px] w-6 rounded-full transition-all duration-300 ${
+              menuOpen || !scrolled ? "bg-white" : "bg-carbon"
+            } ${menuOpen ? "-translate-y-[7px] -rotate-45" : ""}`}
           />
         </button>
       </div>
 
       {/* Mobile overlay */}
       <div
-        className={`fixed inset-0 z-40 bg-black/40 transition-opacity duration-500 md:hidden ${
+        className={`fixed inset-0 z-40 bg-black/40 transition-opacity duration-300 md:hidden ${
           menuOpen ? "opacity-100" : "opacity-0 pointer-events-none"
         }`}
         aria-hidden="true"
@@ -114,7 +123,7 @@ export default function Navbar() {
 
       {/* Mobile slide-in panel */}
       <div
-        className={`fixed top-0 right-0 z-50 h-full w-3/4 bg-forest transition-transform duration-500 ease-in-out md:hidden ${
+        className={`fixed top-0 right-0 z-50 h-full w-3/4 bg-forest transition-transform duration-300 ease-out md:hidden ${
           menuOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
