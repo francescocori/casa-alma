@@ -1,19 +1,18 @@
 "use client";
 
+import Image from "next/image";
 import RevealWrapper from "@/components/RevealWrapper";
 
 export default function BookingCTA() {
   return (
-    <section className="relative bg-forest py-24 px-6 text-center text-warm-white rounded-[35px] mx-6">
-      {/* Dot pattern overlay */}
-      <div
+    <section className="relative bg-forest pt-0 pb-24 px-6 text-center text-warm-white rounded-[35px] mx-6 overflow-hidden ">
+      <Image
+        src="/images/montagne2.svg"
+        alt=""
+        width={1200}
+        height={400}
         aria-hidden="true"
-        className="absolute inset-0"
-        style={{
-          backgroundImage:
-            "radial-gradient(circle, rgba(255,255,255,0.03) 1px, transparent 1px)",
-          backgroundSize: "20px 20px",
-        }}
+        className="pointer-events-none mx-auto  mb-4 w-full max-w-4xl object-contain"
       />
 
       <div className="relative z-10 mx-auto max-w-3xl">
