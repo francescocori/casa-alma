@@ -6,17 +6,25 @@ import RevealWrapper from "@/components/RevealWrapper";
 export default function BookingCTA() {
   return (
     <section className="relative bg-forest pt-0 pb-24 px-6 text-center text-warm-white rounded-[35px] mx-6 overflow-hidden ">
-      <Image
+      {/* <Image
         src="/images/montagne2.svg"
         alt=""
         width={1200}
         height={400}
         aria-hidden="true"
         className="pointer-events-none mx-auto  mb-4 w-full max-w-4xl object-contain"
-      />
+      /> */}
 
       <div className="relative z-10 mx-auto max-w-3xl">
         <RevealWrapper>
+          <Image
+            src="/images/montagne2.svg"
+            alt=""
+            width={1200}
+            height={400}
+            aria-hidden="true"
+            className="pointer-events-none mx-auto  mb-4 w-full max-w-4xl mt-10 object-contain"
+          />
           <p className="text-[0.7rem] uppercase tracking-[4px] text-sage-light">
             Prenota il tuo soggiorno
           </p>
