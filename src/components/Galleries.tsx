@@ -149,7 +149,7 @@ function GalleryCard({ property }: { property: Property }) {
   }
 
   return (
-    <div className="rounded-[15px] bg-cream transition-all duration-300 overflow-hidden max-w-full">
+    <div className="rounded-[15px] bg-cream transition-all duration-300 overflow-hidden max-w-full ">
       {/* Header */}
       <div className="flex items-center justify-between px-4 md:px-8 pt-6">
         <h3 className="font-heading text-xl text-forest">{property.name}</h3>
@@ -159,7 +159,7 @@ function GalleryCard({ property }: { property: Property }) {
       </div>
 
       {/* Main image */}
-      <div className="group relative mx-4 md:mx-6 mt-4 aspect-[16/10] overflow-hidden rounded-[20px]">
+      <div className="group relative  md:mx-6 mt-4 aspect-[16/10] overflow-hidden rounded-[20px]">
         {images.map((img, i) => (
           <Image
             key={img.src + i}
@@ -182,7 +182,18 @@ function GalleryCard({ property }: { property: Property }) {
             aria-label="Foto precedente"
             className="absolute left-2 top-1/2 -translate-y-1/2 flex h-8 w-8 items-center justify-center rounded-full bg-black/30 text-white opacity-0 transition-opacity group-hover:opacity-100"
           >
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="15 18 9 12 15 6" /></svg>
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <polyline points="15 18 9 12 15 6" />
+            </svg>
           </button>
         )}
         {active < images.length - 1 && (
@@ -192,7 +203,18 @@ function GalleryCard({ property }: { property: Property }) {
             aria-label="Foto successiva"
             className="absolute right-2 top-1/2 -translate-y-1/2 flex h-8 w-8 items-center justify-center rounded-full bg-black/30 text-white opacity-0 transition-opacity group-hover:opacity-100"
           >
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 6 15 12 9 18" /></svg>
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <polyline points="9 6 15 12 9 18" />
+            </svg>
           </button>
         )}
       </div>

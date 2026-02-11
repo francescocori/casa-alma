@@ -23,20 +23,30 @@ export default function Navbar() {
 
   const closeMenu = useCallback(() => setMenuOpen(false), []);
 
+  // Lock body scroll when menu is open
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [menuOpen]);
+
   return (
     <nav
       aria-label="Navigazione principale"
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
-        scrolled ? "bg-cream/95 backdrop-blur-md shadow-sm" : "bg-transparent"
+        menuOpen
+          ? "bg-transparent"
+          : scrolled
+            ? "bg-cream/95 backdrop-blur-md shadow-sm"
+            : "bg-transparent"
       }`}
     >
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 md:px-10">
+      <div className="relative z-[60] mx-auto flex max-w-7xl items-center justify-between px-6 py-4 md:px-10">
         {/* Logo */}
         <a
           href="#top"
           aria-label="Torna in cima — Villa Alma"
           className={`font-heading text-lg tracking-[0.25em] transition-colors duration-500 ${
-            scrolled ? "text-carbon" : "text-white"
+            menuOpen ? "text-white" : scrolled ? "text-carbon" : "text-white"
           }`}
         >
           VILLA ALMA

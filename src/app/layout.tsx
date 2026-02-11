@@ -81,15 +81,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="it">
-      <head>
+      <body
+        className={`${dmSerifDisplay.variable} ${dmSans.variable} antialiased`}
+      >
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-      </head>
-      <body
-        className={`${dmSerifDisplay.variable} ${dmSans.variable} antialiased`}
-      >
         <Navbar />
         {children}
         <Footer />

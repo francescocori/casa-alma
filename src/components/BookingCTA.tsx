@@ -5,7 +5,7 @@ import RevealWrapper from "@/components/RevealWrapper";
 
 export default function BookingCTA() {
   return (
-    <section className="relative bg-forest pt-0 pb-24 px-6 text-center text-warm-white rounded-[35px] mx-6 overflow-hidden ">
+    <section className="relative bg-forest pt-0 pb-24 px-6 text-center text-warm-white rounded-[35px] mx-2 md:mx-6 overflow-hidden ">
       {/* <Image
         src="/images/montagne2.svg"
         alt=""
