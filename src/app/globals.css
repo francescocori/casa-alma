@@ -3,7 +3,7 @@
 @theme inline {
   --animate-hero-zoom: hero-zoom 20s ease-in-out alternate infinite;
   --animate-hero-bounce: hero-bounce 2.5s ease-in-out infinite;
-  --color-cream: #f5f0ea;
+  --color-cream: #f2ebe3;
   --color-cream-dark: #ede6dc;
   --color-forest: #2c3e2d;
   --color-forest-light: #3d5240;
@@ -20,14 +20,12 @@
 
 html {
   scroll-behavior: smooth;
-  overflow-x: hidden;
 }
 
 body {
   font-family: var(--font-body);
   background-color: var(--color-cream);
   color: var(--color-carbon);
-  overflow-x: hidden;
 }
 
 .gallery-thumbs {

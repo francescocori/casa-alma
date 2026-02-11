@@ -57,7 +57,7 @@ const ACTIVITIES: Activity[] = [
     name: "Cascate",
     description:
       "Visitate le spettacolari cascate nascoste tra le valli — un'esperienza indimenticabile.",
-    src: "https://images.unsplash.com/photo-1432405972618-c6b0cfba8b6f?w=960&q=80",
+    src: "https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=960&q=80",
     alt: "Cascata spettacolare che scende tra le rocce della montagna",
     icon: (
       <svg {...ICON_PROPS}>
@@ -72,7 +72,10 @@ const ACTIVITIES: Activity[] = [
 
 export default function Activities() {
   return (
-    <section id="attivita" className="bg-cream py-28 px-6 lg:px-12">
+    <section
+      id="attivita"
+      className="bg-forest py-14 px-6 lg:px-12 rounded-[35px] mx-2 md:mx-6"
+    >
       {/* Header */}
       <div className="mx-auto mb-16 max-w-xl text-center">
         <RevealWrapper>
@@ -82,14 +85,14 @@ export default function Activities() {
         </RevealWrapper>
         <RevealWrapper delay={150}>
           <h2
-            className="mt-4 mb-4 font-heading text-forest"
+            className="mt-4 mb-4 font-heading text-white"
             style={{ fontSize: "clamp(2rem, 4vw, 3.2rem)" }}
           >
             Vivi la montagna
           </h2>
         </RevealWrapper>
         <RevealWrapper delay={300}>
-          <p className="text-carbon/70">
+          <p className="text-white/75">
             Ogni stagione offre emozioni uniche. Dalle piste innevate ai
             sentieri fioriti, c&apos;è sempre un buon motivo per visitare Villa
             Alma.

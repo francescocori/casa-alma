@@ -105,27 +105,19 @@ export default function Location() {
           </RevealWrapper>
         </div>
 
-        {/* Right — Map placeholder */}
+        {/* Right — Map */}
         <RevealWrapper delay={300} direction="left">
-          <div className="flex aspect-[4/3] flex-col items-center justify-center overflow-hidden rounded-[20px] bg-cream-dark">
-            <svg
-              width="48"
-              height="48"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="opacity-40"
-              aria-hidden="true"
-            >
-              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" />
-              <circle cx="12" cy="9" r="2.5" />
-            </svg>
-            <p className="mt-3 text-sm opacity-50">
-              Inserisci qui Google Maps embed
-            </p>
+          <div className="aspect-[4/3] overflow-hidden rounded-[20px]">
+            <iframe
+              src="https://maps.google.com/maps?q=46.4035703,13.3763008&z=12&output=embed"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Posizione Villa Alma su Google Maps"
+            />
           </div>
         </RevealWrapper>
       </div>
