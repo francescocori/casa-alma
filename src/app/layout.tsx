@@ -1,5 +1,9 @@
 import type { Metadata } from "next";
-import { DM_Serif_Display, DM_Sans } from "next/font/google";
+import {
+  DM_Serif_Display,
+  DM_Sans,
+  Cormorant_Garamond,
+} from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
@@ -10,7 +14,12 @@ const dmSerifDisplay = DM_Serif_Display({
   subsets: ["latin"],
   weight: "400",
 });
-
+const cormorant = Cormorant_Garamond({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-cormorant",
+  display: "swap",
+});
 const dmSans = DM_Sans({
   variable: "--font-dm-sans",
   subsets: ["latin"],
@@ -81,9 +90,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="it">
-      <body
-        className={`${dmSerifDisplay.variable} ${dmSans.variable} antialiased`}
-      >
+      <body className={`${cormorant.variable} ${dmSans.variable} antialiased`}>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

@@ -55,7 +55,7 @@ export default function Hero() {
             textShadow: "0 2px 30px rgba(0,0,0,0.3)",
           }}
         >
-          VILLA ALMA
+          Villa Alma
         </h1>
 
         <p className="mt-4 text-lg font-light tracking-wider opacity-90">
