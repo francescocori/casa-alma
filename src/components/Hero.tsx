@@ -64,7 +64,7 @@ export default function Hero() {
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-10 left-1/2 z-10 flex -translate-x-1/2 animate-hero-bounce flex-col items-center gap-2">
+      <div className="absolute bottom-10 left-1/2 z-10 flex animate-hero-bounce flex-col items-center gap-2">
         <span className="text-[0.65rem] uppercase tracking-[3px] text-white/80">
           Scopri
         </span>

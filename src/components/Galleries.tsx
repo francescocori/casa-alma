@@ -94,16 +94,23 @@ const PROPERTIES: Property[] = [
 function ArrowButton({
   direction,
   onClick,
+  disabled = false,
 }: {
   direction: "left" | "right";
   onClick: () => void;
+  disabled?: boolean;
 }) {
   return (
     <button
       type="button"
       onClick={onClick}
+      disabled={disabled}
       aria-label={direction === "left" ? "Foto precedenti" : "Foto successive"}
-      className="flex h-[55px] w-8 shrink-0 items-center justify-center rounded-[12px] bg-forest/5 text-forest/50 transition-colors hover:bg-forest/10 hover:text-forest"
+      className={`flex h-[55px] w-8 shrink-0 items-center justify-center rounded-[12px] transition-colors ${
+        disabled
+          ? "bg-forest/3 text-forest/15 cursor-default"
+          : "bg-forest/5 text-forest/50 hover:bg-forest/10 hover:text-forest"
+      }`}
     >
       <svg
         width="14"
@@ -135,8 +142,6 @@ function GalleryCard({ property }: { property: Property }) {
     ? images.slice(thumbOffset, thumbOffset + MAX_VISIBLE)
     : images;
 
-  const canScrollLeft = thumbOffset > 0;
-  const canScrollRight = thumbOffset + MAX_VISIBLE < images.length;
 
   function goTo(index: number) {
     setActive(index);
@@ -221,12 +226,11 @@ function GalleryCard({ property }: { property: Property }) {
 
       {/* Thumbnail strip */}
       <div className="flex items-center gap-2 px-4 md:px-6 pt-4 pb-6">
-        {needsArrows && canScrollLeft && (
-          <ArrowButton
-            direction="left"
-            onClick={() => goTo(Math.max(0, active - 1))}
-          />
-        )}
+        <ArrowButton
+          direction="left"
+          disabled={active === 0}
+          onClick={() => goTo(Math.max(0, active - 1))}
+        />
 
         <div className="flex flex-1 gap-2 justify-center">
           {visibleThumbs.map((img, vi) => {
@@ -256,12 +260,11 @@ function GalleryCard({ property }: { property: Property }) {
           })}
         </div>
 
-        {needsArrows && canScrollRight && (
-          <ArrowButton
-            direction="right"
-            onClick={() => goTo(Math.min(images.length - 1, active + 1))}
-          />
-        )}
+        <ArrowButton
+          direction="right"
+          disabled={active === images.length - 1}
+          onClick={() => goTo(Math.min(images.length - 1, active + 1))}
+        />
       </div>
     </div>
   );
