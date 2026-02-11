@@ -108,7 +108,7 @@ export default function Hero() {
           blurDataURL={BLUR_DATA_URL}
           onLoad={() => setImageLoaded(true)}
           className={`object-cover transition-none ${
-            imageLoaded ? "animate-hero-zoom-out" : "scale-125"
+            imageLoaded ? "animate-hero-zoom-out" : "scale-135"
           }`}
         />
       </div>
