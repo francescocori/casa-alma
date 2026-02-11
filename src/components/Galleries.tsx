@@ -142,7 +142,6 @@ function GalleryCard({ property }: { property: Property }) {
     ? images.slice(thumbOffset, thumbOffset + MAX_VISIBLE)
     : images;
 
-
   function goTo(index: number) {
     setActive(index);
     // Keep the active thumbnail visible in the strip
@@ -272,10 +271,7 @@ function GalleryCard({ property }: { property: Property }) {
 
 export default function Galleries() {
   return (
-    <section
-      id="alloggi"
-      className="bg-cream py-28 px-6 lg:px-12 overflow-hidden"
-    >
+    <section id="alloggi" className="bg-cream py-28 px-2  overflow-hidden">
       {/* Header */}
       <div className="mx-auto mb-16 max-w-xl text-center">
         <RevealWrapper>
@@ -300,7 +296,7 @@ export default function Galleries() {
       </div>
 
       {/* Gallery cards */}
-      <div className="mx-auto grid max-w-6xl gap-8 md:grid-cols-2">
+      <div className="mx-auto grid w-full gap-4 lg:gap-0 md:grid-cols-2">
         {PROPERTIES.map((property, i) => (
           <RevealWrapper key={property.name} delay={450 + i * 150}>
             <GalleryCard property={property} />
