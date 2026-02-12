@@ -12,7 +12,10 @@ const CONTACT_LINKS = [
 
 const SOCIAL_LINKS = [
   { label: "Instagram", href: "https://www.instagram.com/villaalmasaletto/" },
-  { label: "Facebook", href: "https://www.facebook.com/profile.php?id=61587326968726" },
+  {
+    label: "Facebook",
+    href: "https://www.facebook.com/profile.php?id=61587326968726",
+  },
   { label: "Airbnb", href: "https://www.airbnb.it/rooms/1600275293658777279" },
 ];
 
@@ -31,23 +34,43 @@ export default function Footer() {
         </div>
 
         {/* Esplora */}
-        <div>
-          <p className="mb-5 text-[0.75rem] uppercase tracking-[3px] text-white/50">
-            Esplora
-          </p>
-          <nav aria-label="Link footer esplora">
-            {EXPLORE_LINKS.map(({ label, href }) => (
-              <a
-                key={href}
-                href={href}
-                className="mb-3 block text-sm text-white/70 transition-colors duration-300 hover:text-white"
-              >
-                {label}
-              </a>
-            ))}
-          </nav>
+        <div className="flex justify-between">
+          <div>
+            <p className="mb-5 text-[0.75rem] uppercase tracking-[3px] text-white/50">
+              Esplora
+            </p>
+            <nav aria-label="Link footer esplora">
+              {EXPLORE_LINKS.map(({ label, href }) => (
+                <a
+                  key={href}
+                  href={href}
+                  className="mb-3 block text-sm text-white/70 transition-colors duration-300 hover:text-white"
+                >
+                  {label}
+                </a>
+              ))}
+            </nav>
+          </div>
+          {/* Social */}
+          <div className="block lg:hidden mr-12">
+            <p className="mb-5 text-[0.75rem] uppercase tracking-[3px] text-white/50">
+              Social
+            </p>
+            <nav aria-label="Link footer social">
+              {SOCIAL_LINKS.map(({ label, href }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mb-3 block text-sm text-white/70 transition-colors duration-300 hover:text-white"
+                >
+                  {label}
+                </a>
+              ))}
+            </nav>
+          </div>
         </div>
-
         {/* Contatti */}
         <div>
           <p className="mb-5 text-[0.75rem] uppercase tracking-[3px] text-white/50">
@@ -69,7 +92,7 @@ export default function Footer() {
         </div>
 
         {/* Social */}
-        <div>
+        <div className="hidden lg:block">
           <p className="mb-5 text-[0.75rem] uppercase tracking-[3px] text-white/50">
             Social
           </p>
