@@ -109,7 +109,7 @@ export default function Location() {
         <RevealWrapper delay={300} direction="left">
           <div className="aspect-square md:aspect-[4/3] overflow-hidden rounded-[20px]">
             <iframe
-              src="https://maps.google.com/maps?q=46.4035703,13.3763008&z=12&output=embed"
+              src="https://maps.google.com/maps?q=46.4033702,13.3768759&z=15&output=embed"
               width="100%"
               height="100%"
               style={{ border: 0 }}
