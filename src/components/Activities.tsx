@@ -86,7 +86,7 @@ export default function Activities() {
         <RevealWrapper delay={150}>
           <h2
             className="mt-4 mb-4 font-heading text-white"
-            style={{ fontSize: "clamp(2rem, 4vw, 3.2rem)" }}
+            style={{ fontSize: "clamp(2rem, 4vw, 3.2rem)", lineHeight: 1.1 }}
           >
             Vivi la montagna
           </h2>

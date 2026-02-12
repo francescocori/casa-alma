@@ -18,13 +18,14 @@ const PROPERTIES: Property[] = [
     guests: "4 ospiti",
     images: [
       {
-        src: "https://images.unsplash.com/photo-1518732714860-b62714ce0c59?w=960&q=80",
-        alt: "Soggiorno accogliente con camino e divano in pelle",
-      },
-      {
         src: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=960&q=80",
         alt: "Camera da letto con vista montagna",
       },
+      {
+        src: "https://images.unsplash.com/photo-1518732714860-b62714ce0c59?w=960&q=80",
+        alt: "Soggiorno accogliente con camino e divano in pelle",
+      },
+
       {
         src: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=960&q=80",
         alt: "Cucina in legno con piano cottura moderno",
@@ -306,7 +307,7 @@ export default function Galleries() {
         <RevealWrapper delay={150}>
           <h2
             className="mt-4 mb-4 font-heading text-forest"
-            style={{ fontSize: "clamp(2rem, 4vw, 3.2rem)" }}
+            style={{ fontSize: "clamp(2rem, 4vw, 3.2rem)", lineHeight: 1.1 }}
           >
             Due rifugi, un&apos;unica magia
           </h2>

@@ -24,7 +24,7 @@ export default function About() {
           <RevealWrapper delay={300}>
             <h2
               className="mt-4 mb-6 font-heading text-forest"
-              style={{ fontSize: "clamp(2rem, 4vw, 3.2rem)" }}
+              style={{ fontSize: "clamp(2rem, 4vw, 3.2rem)", lineHeight: 1.1 }}
             >
               Una storia di passione
               <br />

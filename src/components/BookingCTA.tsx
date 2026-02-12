@@ -24,7 +24,7 @@ export default function BookingCTA() {
         <RevealWrapper delay={150}>
           <h2
             className="mt-4 mb-4 font-heading text-warm-white"
-            style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}
+            style={{ fontSize: "clamp(2rem, 4vw, 3rem)", lineHeight: 1.1 }}
           >
             Trova il tuo rifugio perfetto
           </h2>

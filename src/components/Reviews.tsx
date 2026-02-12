@@ -119,7 +119,16 @@ function MobileCarousel() {
               : "bg-forest/10 text-forest hover:bg-forest/20"
           }`}
         >
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <svg
+            width="14"
+            height="14"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
             <polyline points="15 18 9 12 15 6" />
           </svg>
         </button>
@@ -152,7 +161,16 @@ function MobileCarousel() {
               : "bg-forest/10 text-forest hover:bg-forest/20"
           }`}
         >
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <svg
+            width="14"
+            height="14"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
             <polyline points="9 6 15 12 9 18" />
           </svg>
         </button>
@@ -163,7 +181,7 @@ function MobileCarousel() {
 
 export default function Reviews() {
   return (
-    <section id="recensioni" className="bg-cream py-28 px-6 lg:px-12">
+    <section id="recensioni" className="bg-cream pt-18 lg:py-28 px-6 lg:px-12">
       {/* Header */}
       <div className="mx-auto mb-16 max-w-xl text-center">
         <RevealWrapper>
@@ -174,7 +192,7 @@ export default function Reviews() {
         <RevealWrapper delay={150}>
           <h2
             className="mt-4 font-heading text-forest"
-            style={{ fontSize: "clamp(2rem, 4vw, 3.2rem)" }}
+            style={{ fontSize: "clamp(2rem, 4vw, 3.2rem)", lineHeight: 1.1 }}
           >
             Cosa dicono i nostri ospiti
           </h2>

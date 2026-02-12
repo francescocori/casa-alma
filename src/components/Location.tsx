@@ -31,7 +31,7 @@ const DETAILS: Detail[] = [
       </svg>
     ),
     title: "Indirizzo",
-    description: "Via della Montagna, 12 — Località da definire",
+    description: "Frazione Saletto 33, Chiusaforte (Udine) 33010 Italia",
   },
   {
     icon: (
@@ -42,7 +42,7 @@ const DETAILS: Detail[] = [
       </svg>
     ),
     title: "Come Arrivare",
-    description: "A 2h da Milano — parcheggio gratuito disponibile",
+    description: "A 10 min da Sella Nevea — parcheggio gratuito disponibile",
   },
   {
     icon: (
@@ -58,7 +58,7 @@ const DETAILS: Detail[] = [
 export default function Location() {
   return (
     <section id="dove" className="bg-cream py-28 px-6 lg:px-12">
-      <div className="mx-auto grid max-w-7xl items-center gap-16 md:grid-cols-2">
+      <div className="mx-auto grid max-w-7xl items-center gap-6 md:grid-cols-2">
         {/* Left — Info */}
         <div>
           <RevealWrapper>
@@ -70,7 +70,7 @@ export default function Location() {
           <RevealWrapper delay={150}>
             <h2
               className="mt-4 mb-4 font-heading text-forest"
-              style={{ fontSize: "clamp(2rem, 4vw, 3.2rem)" }}
+              style={{ fontSize: "clamp(2rem, 4vw, 3.2rem)", lineHeight: 1.1 }}
             >
               Raggiungerci è
               <br />
