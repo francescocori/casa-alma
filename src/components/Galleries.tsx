@@ -87,6 +87,30 @@ const PROPERTIES: Property[] = [
         src: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=960&q=80",
         alt: "Terrazza panoramica con sedie in legno",
       },
+      {
+        src: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=960&q=80",
+        alt: "Cucina rustica con isola centrale",
+      },
+      {
+        src: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=960&q=80",
+        alt: "Bagno con vasca e vista sulla valle",
+      },
+      {
+        src: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=960&q=80",
+        alt: "Terrazza panoramica con sedie in legno",
+      },
+      {
+        src: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=960&q=80",
+        alt: "Cucina rustica con isola centrale",
+      },
+      {
+        src: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=960&q=80",
+        alt: "Bagno con vasca e vista sulla valle",
+      },
+      {
+        src: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=960&q=80",
+        alt: "Terrazza panoramica con sedie in legno",
+      },
     ],
   },
 ];

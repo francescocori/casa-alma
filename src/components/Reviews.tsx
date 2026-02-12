@@ -85,32 +85,32 @@ export default function Reviews() {
       {/* Cards */}
       <div className="mx-auto max-w-7xl flex gap-6 overflow-x-auto snap-x snap-mandatory pb-4 scrollbar-hide md:grid md:grid-cols-3 md:overflow-visible md:snap-none md:pb-0">
         {REVIEWS.map((review, i) => (
-          // <RevealWrapper key={i} delay={i * 150}>
-          <div className="w-[85vw] shrink-0 snap-center md:w-auto rounded-[20px] bg-cream p-10 shadow-sm transition-transform duration-300 hover:-translate-y-1 border-1 border-forest">
-            {/* Stars */}
-            <div className="mb-5 flex gap-1" aria-label="5 stelle su 5">
-              {Array.from({ length: 5 }, (_, j) => (
-                <StarIcon key={j} />
-              ))}
-            </div>
-
-            {/* Quote */}
-            <p className="mb-6 text-base italic leading-relaxed text-carbon/80">
-              &ldquo;{review.quote}&rdquo;
-            </p>
-
-            {/* Author */}
-            <div className="flex items-center gap-4">
-              <div className="flex h-[42px] w-[42px] items-center justify-center rounded-full bg-sage font-heading text-warm-white">
-                {review.name[0]}
+          <RevealWrapper key={i} delay={i * 150} className="w-[85vw] shrink-0 snap-center md:w-auto opacity-100! translate-y-0! md:opacity-[unset]! md:translate-y-[unset]!">
+            <div className="rounded-[20px] bg-cream p-10 shadow-sm transition-transform duration-300 hover:-translate-y-1 border-1 border-forest">
+              {/* Stars */}
+              <div className="mb-5 flex gap-1" aria-label="5 stelle su 5">
+                {Array.from({ length: 5 }, (_, j) => (
+                  <StarIcon key={j} />
+                ))}
               </div>
-              <div>
-                <p className="text-sm font-medium">{review.name}</p>
-                <p className="mt-0.5 text-xs text-carbon/50">{review.date}</p>
+
+              {/* Quote */}
+              <p className="mb-6 text-base italic leading-relaxed text-carbon/80">
+                &ldquo;{review.quote}&rdquo;
+              </p>
+
+              {/* Author */}
+              <div className="flex items-center gap-4">
+                <div className="flex h-[42px] w-[42px] items-center justify-center rounded-full bg-sage font-heading text-warm-white">
+                  {review.name[0]}
+                </div>
+                <div>
+                  <p className="text-sm font-medium">{review.name}</p>
+                  <p className="mt-0.5 text-xs text-carbon/50">{review.date}</p>
+                </div>
               </div>
             </div>
-          </div>
-          // </RevealWrapper>
+          </RevealWrapper>
         ))}
       </div>
 

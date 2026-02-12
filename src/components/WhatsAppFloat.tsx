@@ -15,7 +15,7 @@ export default function WhatsAppFloat() {
 
   return (
     <a
-      href="https://wa.me/39XXXXXXXXXX"
+      href="https://wa.me/393890199168?text=Hello%20I%20would%20like%20to%20make%20a%20reservation"
       target="_blank"
       rel="noopener"
       aria-label="Contattaci su WhatsApp"

@@ -6,17 +6,21 @@ const EXPLORE_LINKS = [
 ];
 
 const CONTACT_LINKS = [
-  { label: "info@villaalma.it", href: "mailto:info@villaalma.it" },
-  { label: "+39 XXX XXX XXXX", href: "tel:+39XXXXXXXXXX" },
-  { label: "Instagram", href: "#" },
-  { label: "Airbnb", href: "#" },
+  { label: "villaalma2026@gmail.com", href: "mailto:villaalma2026@gmail.com" },
+  { label: "+39 389 019 9168", href: "tel:+393890199168" },
+];
+
+const SOCIAL_LINKS = [
+  { label: "Instagram", href: "https://www.instagram.com/villaalmasaletto/" },
+  { label: "Facebook", href: "https://www.facebook.com/profile.php?id=61587326968726" },
+  { label: "Airbnb", href: "https://www.airbnb.it/rooms/1600275293658777279" },
 ];
 
 export default function Footer() {
   return (
     <footer className="bg-forest pt-16 pb-8 px-6 text-warm-white lg:px-12">
       {/* Main content */}
-      <div className="mx-auto grid max-w-7xl gap-12 md:grid-cols-[2fr_1fr_1fr]">
+      <div className="mx-auto grid max-w-7xl gap-12 md:grid-cols-[2fr_1fr_1fr_1fr]">
         {/* Brand */}
         <div>
           <p className="font-heading text-3xl tracking-wider">Villa Alma</p>
@@ -54,6 +58,28 @@ export default function Footer() {
               <a
                 key={label}
                 href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mb-3 block text-sm text-white/70 transition-colors duration-300 hover:text-white"
+              >
+                {label}
+              </a>
+            ))}
+          </nav>
+        </div>
+
+        {/* Social */}
+        <div>
+          <p className="mb-5 text-[0.75rem] uppercase tracking-[3px] text-white/50">
+            Social
+          </p>
+          <nav aria-label="Link footer social">
+            {SOCIAL_LINKS.map(({ label, href }) => (
+              <a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="mb-3 block text-sm text-white/70 transition-colors duration-300 hover:text-white"
               >
                 {label}

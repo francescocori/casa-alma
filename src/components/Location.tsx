@@ -51,7 +51,7 @@ const DETAILS: Detail[] = [
       </svg>
     ),
     title: "Contatti",
-    description: "+39 XXX XXX XXXX — info@villaalma.it",
+    description: "+39 389 019 9168 — villaalma2026@gmail.com",
   },
 ];
 
