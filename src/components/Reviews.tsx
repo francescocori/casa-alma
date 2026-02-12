@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import RevealWrapper from "@/components/RevealWrapper";
 
 interface Review {
@@ -62,6 +63,104 @@ function StarIcon() {
   );
 }
 
+function ReviewCard({ review }: { review: Review }) {
+  return (
+    <div className="rounded-[20px] bg-cream p-10 shadow-sm transition-transform duration-300 hover:-translate-y-1 border-1 border-forest">
+      <div className="mb-5 flex gap-1" aria-label="5 stelle su 5">
+        {Array.from({ length: 5 }, (_, j) => (
+          <StarIcon key={j} />
+        ))}
+      </div>
+      <p className="mb-6 text-base italic leading-relaxed text-carbon/80">
+        &ldquo;{review.quote}&rdquo;
+      </p>
+      <div className="flex items-center gap-4">
+        <div className="flex h-[42px] w-[42px] items-center justify-center rounded-full bg-sage font-heading text-warm-white">
+          {review.name[0]}
+        </div>
+        <div>
+          <p className="text-sm font-medium">{review.name}</p>
+          <p className="mt-0.5 text-xs text-carbon/50">{review.date}</p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function MobileCarousel() {
+  const [active, setActive] = useState(0);
+
+  return (
+    <div className="md:hidden">
+      {/* Card with slide animation */}
+      <div className="relative overflow-hidden">
+        <div
+          className="flex transition-transform duration-300 ease-out"
+          style={{ transform: `translateX(-${active * 100}%)` }}
+        >
+          {REVIEWS.map((review, i) => (
+            <div key={i} className="w-full shrink-0 px-1">
+              <ReviewCard review={review} />
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Controls */}
+      <div className="mt-6 flex items-center justify-center gap-4">
+        <button
+          type="button"
+          onClick={() => setActive((p) => Math.max(0, p - 1))}
+          disabled={active === 0}
+          aria-label="Recensione precedente"
+          className={`flex h-9 w-9 items-center justify-center rounded-full transition-colors ${
+            active === 0
+              ? "bg-forest/5 text-forest/20 cursor-default"
+              : "bg-forest/10 text-forest hover:bg-forest/20"
+          }`}
+        >
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <polyline points="15 18 9 12 15 6" />
+          </svg>
+        </button>
+
+        {/* Dots */}
+        <div className="flex gap-2">
+          {REVIEWS.map((_, i) => (
+            <button
+              key={i}
+              type="button"
+              onClick={() => setActive(i)}
+              aria-label={`Vai alla recensione ${i + 1}`}
+              className={`h-2 rounded-full transition-all duration-300 ${
+                i === active
+                  ? "w-6 bg-terracotta"
+                  : "w-2 bg-forest/20 hover:bg-forest/40"
+              }`}
+            />
+          ))}
+        </div>
+
+        <button
+          type="button"
+          onClick={() => setActive((p) => Math.min(REVIEWS.length - 1, p + 1))}
+          disabled={active === REVIEWS.length - 1}
+          aria-label="Recensione successiva"
+          className={`flex h-9 w-9 items-center justify-center rounded-full transition-colors ${
+            active === REVIEWS.length - 1
+              ? "bg-forest/5 text-forest/20 cursor-default"
+              : "bg-forest/10 text-forest hover:bg-forest/20"
+          }`}
+        >
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <polyline points="9 6 15 12 9 18" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  );
+}
+
 export default function Reviews() {
   return (
     <section id="recensioni" className="bg-cream py-28 px-6 lg:px-12">
@@ -82,67 +181,18 @@ export default function Reviews() {
         </RevealWrapper>
       </div>
 
-      {/* Cards */}
-      <div className="mx-auto max-w-7xl flex gap-6 overflow-x-auto snap-x snap-mandatory pb-4 scrollbar-hide md:grid md:grid-cols-3 md:overflow-visible md:snap-none md:pb-0">
-        {REVIEWS.map((review, i) => (
-          <RevealWrapper key={i} delay={i * 150} className="w-[85vw] shrink-0 snap-center md:w-auto opacity-100! translate-y-0! md:opacity-[unset]! md:translate-y-[unset]!">
-            <div className="rounded-[20px] bg-cream p-10 shadow-sm transition-transform duration-300 hover:-translate-y-1 border-1 border-forest">
-              {/* Stars */}
-              <div className="mb-5 flex gap-1" aria-label="5 stelle su 5">
-                {Array.from({ length: 5 }, (_, j) => (
-                  <StarIcon key={j} />
-                ))}
-              </div>
+      <div className="mx-auto max-w-7xl">
+        {/* Mobile carousel */}
+        <MobileCarousel />
 
-              {/* Quote */}
-              <p className="mb-6 text-base italic leading-relaxed text-carbon/80">
-                &ldquo;{review.quote}&rdquo;
-              </p>
-
-              {/* Author */}
-              <div className="flex items-center gap-4">
-                <div className="flex h-[42px] w-[42px] items-center justify-center rounded-full bg-sage font-heading text-warm-white">
-                  {review.name[0]}
-                </div>
-                <div>
-                  <p className="text-sm font-medium">{review.name}</p>
-                  <p className="mt-0.5 text-xs text-carbon/50">{review.date}</p>
-                </div>
-              </div>
-            </div>
-          </RevealWrapper>
-        ))}
-      </div>
-
-      {/* Scroll hint — mobile only */}
-      <div className="mt-4 flex items-center justify-center gap-2 text-carbon/40 md:hidden">
-        <svg
-          width="16"
-          height="16"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          aria-hidden="true"
-        >
-          <polyline points="15 18 9 12 15 6" />
-        </svg>
-        <span className="text-[0.65rem] uppercase tracking-[3px]">Scorri</span>
-        <svg
-          width="16"
-          height="16"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          aria-hidden="true"
-        >
-          <polyline points="9 6 15 12 9 18" />
-        </svg>
+        {/* Desktop grid */}
+        <div className="hidden md:grid md:grid-cols-3 gap-6">
+          {REVIEWS.map((review, i) => (
+            <RevealWrapper key={i} delay={i * 150}>
+              <ReviewCard review={review} />
+            </RevealWrapper>
+          ))}
+        </div>
       </div>
     </section>
   );
