@@ -21,6 +21,10 @@ const PROPERTIES: Property[] = [
       "https://www.airbnb.it/rooms/1600275293658777279?viralityEntryPoint=1&s=76&source_impression_id=p3_1770993729_P3rljZJo7M-JNsIa",
     images: [
       {
+        src: "/images/Dimora in montagna/Immagine 9.jpeg",
+        alt: "Dimora in montagna",
+      },
+      {
         src: "/images/Dimora in montagna/Immagine 4.jpeg",
         alt: "Dimora in montagna",
       },
@@ -88,8 +92,8 @@ const PROPERTIES: Property[] = [
     bookingUrl:
       "https://www.airbnb.it/rooms/894161522302137780?viralityEntryPoint=1&s=76&source_impression_id=p3_1770993836_P3mee542EleV3Omi",
     images: [
-      { src: "/images/La baita/Immagine (1).jpeg", alt: "La baita" },
       { src: "/images/La baita/Immagine 1.jpeg", alt: "La baita" },
+      { src: "/images/La baita/Immagine (1).jpeg", alt: "La baita" },
       { src: "/images/La baita/Immagine 3.jpeg", alt: "La baita" },
       { src: "/images/La baita/Immagine 4.jpeg", alt: "La baita" },
       { src: "/images/La baita/Immagine 5.jpeg", alt: "La baita" },
