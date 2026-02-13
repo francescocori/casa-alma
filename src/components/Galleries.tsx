@@ -15,9 +15,10 @@ interface Property {
 
 const PROPERTIES: Property[] = [
   {
-    name: "Dimora in montagna",
+    name: "Dimora di montagna",
     guests: "max 4 ospiti",
-    bookingUrl: "https://www.airbnb.it/rooms/1600275293658777279?viralityEntryPoint=1&s=76&source_impression_id=p3_1770993729_P3rljZJo7M-JNsIa",
+    bookingUrl:
+      "https://www.airbnb.it/rooms/1600275293658777279?viralityEntryPoint=1&s=76&source_impression_id=p3_1770993729_P3rljZJo7M-JNsIa",
     images: [
       {
         src: "/images/Dimora in montagna/Immagine 4.jpeg",
@@ -84,9 +85,9 @@ const PROPERTIES: Property[] = [
   {
     name: "La baita",
     guests: "max 4 ospiti",
-    bookingUrl: "https://www.airbnb.it/rooms/894161522302137780?viralityEntryPoint=1&s=76&source_impression_id=p3_1770993836_P3mee542EleV3Omi",
+    bookingUrl:
+      "https://www.airbnb.it/rooms/894161522302137780?viralityEntryPoint=1&s=76&source_impression_id=p3_1770993836_P3mee542EleV3Omi",
     images: [
-      { src: "/images/La baita/Immagine.jpeg", alt: "La baita" },
       { src: "/images/La baita/Immagine (1).jpeg", alt: "La baita" },
       { src: "/images/La baita/Immagine 1.jpeg", alt: "La baita" },
       { src: "/images/La baita/Immagine 3.jpeg", alt: "La baita" },
@@ -166,21 +167,21 @@ function GalleryCard({ property }: { property: Property }) {
   return (
     <div className="rounded-[15px] bg-cream transition-all duration-300 overflow-hidden max-w-full ">
       {/* Header */}
-      <div className="flex items-center justify-between px-4 md:px-8 pt-6">
-        <div className="flex items-center gap-3">
-          <h3 className="font-heading text-xl text-forest">{property.name}</h3>
+      <div className="flex flex-col gap-3 px-4 md:px-8 pt-6 md:flex-row md:items-center md:justify-between">
+        <h3 className="font-heading text-xl text-forest">{property.name}</h3>
+        <div className="flex items-center gap-2">
           <a
             href={property.bookingUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="rounded-full bg-terracotta/10 px-3 py-1 text-[0.6rem] font-medium uppercase tracking-widest text-terracotta transition-colors hover:bg-terracotta hover:text-white"
           >
-            Prenota
+            Prenota qui
           </a>
+          <span className="rounded-[15px] bg-terracotta/10 px-3 py-1 text-[0.65rem] uppercase tracking-widest text-terracotta">
+            {property.guests}
+          </span>
         </div>
-        <span className="rounded-[15px] bg-terracotta/10 px-3 py-1 text-[0.65rem] uppercase tracking-widest text-terracotta">
-          {property.guests}
-        </span>
       </div>
 
       {/* Main image */}
