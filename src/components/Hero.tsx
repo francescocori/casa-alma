@@ -98,7 +98,8 @@ export default function Hero() {
       {/* Background image with Ken Burns zoom-out */}
       <div className="absolute inset-0 overflow-hidden">
         <Image
-          src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&q=80"
+          //  src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&q=80"
+          src="/images/montagne4.jpeg"
           alt="Paesaggio alpino con montagne innevate"
           fill
           priority

@@ -67,5 +67,5 @@ body {
 }
 
 @utility animate-hero-zoom-out {
-  animation: hero-zoom-out 20s ease-out forwards;
+  animation: hero-zoom-out 10s ease-out forwards;
 }
