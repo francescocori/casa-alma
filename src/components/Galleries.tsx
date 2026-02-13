@@ -170,7 +170,10 @@ function GalleryCard({ property }: { property: Property }) {
       {/* Header */}
       <div className="flex flex-col gap-3 px-4 md:px-8 pt-6 md:flex-row md:items-center md:justify-between">
         <h3 className="font-heading text-xl text-forest">{property.name}</h3>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 justify-between">
+          <span className="rounded-[15px] bg-terracotta/10 px-3 py-1 text-[0.65rem] uppercase tracking-widest text-terracotta">
+            {property.guests}
+          </span>
           <a
             href={property.bookingUrl}
             target="_blank"
@@ -179,16 +182,15 @@ function GalleryCard({ property }: { property: Property }) {
           >
             Prenota qui
           </a>
-          <span className="rounded-[15px] bg-terracotta/10 px-3 py-1 text-[0.65rem] uppercase tracking-widest text-terracotta">
-            {property.guests}
-          </span>
         </div>
       </div>
 
       {/* Main image */}
       <div
         className="group relative md:mx-6 mt-4 aspect-[16/10] overflow-hidden rounded-[20px]"
-        onTouchStart={(e) => { touchStartX.current = e.touches[0].clientX; }}
+        onTouchStart={(e) => {
+          touchStartX.current = e.touches[0].clientX;
+        }}
         onTouchEnd={(e) => {
           const dx = e.changedTouches[0].clientX - touchStartX.current;
           if (dx < -40 && active < images.length - 1) goTo(active + 1);
