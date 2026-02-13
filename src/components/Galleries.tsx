@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Image from "next/image";
 import RevealWrapper from "@/components/RevealWrapper";
 
@@ -147,6 +147,7 @@ function ArrowButton({
 function GalleryCard({ property }: { property: Property }) {
   const [active, setActive] = useState(0);
   const [thumbOffset, setThumbOffset] = useState(0);
+  const touchStartX = useRef(0);
 
   const images = property.images;
   const needsArrows = images.length > MAX_VISIBLE;
@@ -185,7 +186,15 @@ function GalleryCard({ property }: { property: Property }) {
       </div>
 
       {/* Main image */}
-      <div className="group relative  md:mx-6 mt-4 aspect-[16/10] overflow-hidden rounded-[20px]">
+      <div
+        className="group relative md:mx-6 mt-4 aspect-[16/10] overflow-hidden rounded-[20px]"
+        onTouchStart={(e) => { touchStartX.current = e.touches[0].clientX; }}
+        onTouchEnd={(e) => {
+          const dx = e.changedTouches[0].clientX - touchStartX.current;
+          if (dx < -40 && active < images.length - 1) goTo(active + 1);
+          if (dx > 40 && active > 0) goTo(active - 1);
+        }}
+      >
         {images.map((img, i) => (
           <Image
             key={img.src + i}
