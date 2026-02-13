@@ -9,109 +9,95 @@ const MAX_VISIBLE = 7;
 interface Property {
   name: string;
   guests: string;
+  bookingUrl: string;
   images: { src: string; alt: string }[];
 }
 
 const PROPERTIES: Property[] = [
   {
-    name: "Alma Uno",
-    guests: "4 ospiti",
+    name: "Dimora in montagna",
+    guests: "max 4 ospiti",
+    bookingUrl: "https://www.airbnb.it/rooms/1600275293658777279?viralityEntryPoint=1&s=76&source_impression_id=p3_1770993729_P3rljZJo7M-JNsIa",
     images: [
       {
-        src: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=960&q=80",
-        alt: "Camera da letto con vista montagna",
+        src: "/images/Dimora in montagna/Immagine 4.jpeg",
+        alt: "Dimora in montagna",
       },
       {
-        src: "https://images.unsplash.com/photo-1518732714860-b62714ce0c59?w=960&q=80",
-        alt: "Soggiorno accogliente con camino e divano in pelle",
-      },
-
-      {
-        src: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=960&q=80",
-        alt: "Cucina in legno con piano cottura moderno",
+        src: "/images/Dimora in montagna/Immagine 1.jpeg",
+        alt: "Dimora in montagna",
       },
       {
-        src: "https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?w=960&q=80",
-        alt: "Bagno con finiture in pietra naturale",
+        src: "/images/Dimora in montagna/Immagine 2.jpeg",
+        alt: "Dimora in montagna",
       },
       {
-        src: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=960&q=80",
-        alt: "Vista panoramica delle montagne dal balcone",
+        src: "/images/Dimora in montagna/Immagine 3.jpeg",
+        alt: "Dimora in montagna",
       },
       {
-        src: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=960&q=80",
-        alt: "Vista panoramica delle montagne dal balcone",
+        src: "/images/Dimora in montagna/Immagine.jpeg",
+        alt: "Dimora in montagna",
       },
       {
-        src: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=960&q=80",
-        alt: "Vista panoramica delle montagne dal balcone",
+        src: "/images/Dimora in montagna/Immagine 5.jpeg",
+        alt: "Dimora in montagna",
       },
       {
-        src: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=960&q=80",
-        alt: "Vista panoramica delle montagne dal balcone",
+        src: "/images/Dimora in montagna/Immagine 6.jpeg",
+        alt: "Dimora in montagna",
       },
       {
-        src: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=960&q=80",
-        alt: "Vista panoramica delle montagne dal balcone",
+        src: "/images/Dimora in montagna/Immagine 7.jpeg",
+        alt: "Dimora in montagna",
       },
       {
-        src: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=960&q=80",
-        alt: "Vista panoramica delle montagne dal balcone",
+        src: "/images/Dimora in montagna/Immagine 8.jpeg",
+        alt: "Dimora in montagna",
       },
       {
-        src: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=960&q=80",
-        alt: "Vista panoramica delle montagne dal balcone",
+        src: "/images/Dimora in montagna/Immagine 9.jpeg",
+        alt: "Dimora in montagna",
+      },
+      {
+        src: "/images/Dimora in montagna/Immagine 10.jpeg",
+        alt: "Dimora in montagna",
+      },
+      {
+        src: "/images/Dimora in montagna/Immagine 13.jpeg",
+        alt: "Dimora in montagna",
+      },
+      {
+        src: "/images/Dimora in montagna/Immagine 14.jpeg",
+        alt: "Dimora in montagna",
+      },
+      {
+        src: "/images/Dimora in montagna/Immagine 15.jpeg",
+        alt: "Dimora in montagna",
+      },
+      {
+        src: "/images/Dimora in montagna/Immagine 16.jpeg",
+        alt: "Dimora in montagna",
       },
     ],
   },
   {
-    name: "Alma Due",
-    guests: "6 ospiti",
+    name: "La baita",
+    guests: "max 4 ospiti",
+    bookingUrl: "https://www.airbnb.it/rooms/894161522302137780?viralityEntryPoint=1&s=76&source_impression_id=p3_1770993836_P3mee542EleV3Omi",
     images: [
-      {
-        src: "https://images.unsplash.com/photo-1542718610-a1d656d1884c?w=960&q=80",
-        alt: "Ampio soggiorno con travi a vista e camino",
-      },
-      {
-        src: "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=960&q=80",
-        alt: "Camera matrimoniale con biancheria in lino",
-      },
-      {
-        src: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=960&q=80",
-        alt: "Cucina rustica con isola centrale",
-      },
-      {
-        src: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=960&q=80",
-        alt: "Bagno con vasca e vista sulla valle",
-      },
-      {
-        src: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=960&q=80",
-        alt: "Terrazza panoramica con sedie in legno",
-      },
-      {
-        src: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=960&q=80",
-        alt: "Cucina rustica con isola centrale",
-      },
-      {
-        src: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=960&q=80",
-        alt: "Bagno con vasca e vista sulla valle",
-      },
-      {
-        src: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=960&q=80",
-        alt: "Terrazza panoramica con sedie in legno",
-      },
-      {
-        src: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=960&q=80",
-        alt: "Cucina rustica con isola centrale",
-      },
-      {
-        src: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=960&q=80",
-        alt: "Bagno con vasca e vista sulla valle",
-      },
-      {
-        src: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=960&q=80",
-        alt: "Terrazza panoramica con sedie in legno",
-      },
+      { src: "/images/La baita/Immagine.jpeg", alt: "La baita" },
+      { src: "/images/La baita/Immagine (1).jpeg", alt: "La baita" },
+      { src: "/images/La baita/Immagine 1.jpeg", alt: "La baita" },
+      { src: "/images/La baita/Immagine 3.jpeg", alt: "La baita" },
+      { src: "/images/La baita/Immagine 4.jpeg", alt: "La baita" },
+      { src: "/images/La baita/Immagine 5.jpeg", alt: "La baita" },
+      { src: "/images/La baita/Immagine 6.jpeg", alt: "La baita" },
+      { src: "/images/La baita/Immagine 7.jpeg", alt: "La baita" },
+      { src: "/images/La baita/Immagine 8.jpeg", alt: "La baita" },
+      { src: "/images/La baita/Immagine 9.jpeg", alt: "La baita" },
+      { src: "/images/La baita/Immagine 10.jpeg", alt: "La baita" },
+      { src: "/images/La baita/Immagine 11.jpeg", alt: "La baita" },
     ],
   },
 ];
@@ -181,7 +167,17 @@ function GalleryCard({ property }: { property: Property }) {
     <div className="rounded-[15px] bg-cream transition-all duration-300 overflow-hidden max-w-full ">
       {/* Header */}
       <div className="flex items-center justify-between px-4 md:px-8 pt-6">
-        <h3 className="font-heading text-xl text-forest">{property.name}</h3>
+        <div className="flex items-center gap-3">
+          <h3 className="font-heading text-xl text-forest">{property.name}</h3>
+          <a
+            href={property.bookingUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-full bg-terracotta/10 px-3 py-1 text-[0.6rem] font-medium uppercase tracking-widest text-terracotta transition-colors hover:bg-terracotta hover:text-white"
+          >
+            Prenota
+          </a>
+        </div>
         <span className="rounded-[15px] bg-terracotta/10 px-3 py-1 text-[0.65rem] uppercase tracking-widest text-terracotta">
           {property.guests}
         </span>
